@@ -9,7 +9,7 @@ function getDate () {
 
 function getTime() {
     const now = new Date();
-    const options = { hour: '2-digit', minute: '2-digit', second: '2-digit'};
+    const options = { hour: '2-digit', minute: '2-digit'};
     const timeFormat = new Intl.DateTimeFormat('fr-FR', options).format(now);
 
     return timeFormat
