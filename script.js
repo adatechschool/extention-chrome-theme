@@ -1,3 +1,76 @@
+/*Timer*/
+
+let timer = document.querySelector('.timer')
+
+document.getElementById('timer').addEventListener("click", () => {
+    if(getComputedStyle(timer).visibility != "hidden"){
+        timer.style.visibility = "hidden";
+      } else {
+        timer.style.visibility = "visible";
+      }
+})
+
+const startBtn = document.getElementById("start");
+const pauseBtn = document.getElementById("pause");
+const resetBtn = document.getElementById("reset");
+const display = document.getElementById("display");
+
+let timerValue = 0;
+let initialValue = 0;
+let intervalId = null;
+let isPaused = false;
+
+function updateDisplay() {
+  const minutes = Math.floor(timerValue / 60);
+  const seconds = timerValue % 60;
+  const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+  const formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
+  display.innerText = `${formattedMinutes}:${formattedSeconds}`;
+}
+
+startBtn.addEventListener("click", () => {
+  // Récupère la valeur entrée au moment du clic
+  initialValue = parseInt(document.getElementById("time").value, 10) * 60;
+
+  if (isNaN(initialValue) || initialValue <= 0) {
+    display.innerText = "Temps invalide";
+    return;
+  }
+
+  timerValue = initialValue;
+  updateDisplay();
+
+  if (intervalId !== null) return;
+
+  intervalId = setInterval(() => {
+    if (!isPaused && timerValue > 0) {
+      timerValue--;
+      updateDisplay();
+    }
+
+    if (timerValue <= 0) {
+      clearInterval(intervalId);
+      intervalId = null;
+    }
+  }, 1000);
+});
+
+pauseBtn.addEventListener("click", () => {
+  if (intervalId === null) return;
+  isPaused = !isPaused;
+  pauseBtn.innerText = isPaused ? "Reprendre" : "Pause";
+});
+
+resetBtn.addEventListener("click", () => {
+  clearInterval(intervalId);
+  intervalId = null;
+  timerValue = initialValue;
+  updateDisplay();
+  isPaused = false;
+  pauseBtn.innerText = "Pause";
+});
+
+
 let calculator = document.querySelector('.calculator')
 
 document.getElementById('calculator').addEventListener("click", () => {
@@ -53,3 +126,4 @@ function clearDisplay() {
   operator = '';
   document.getElementById('display').value = ''; // Clear the display
 }
+
