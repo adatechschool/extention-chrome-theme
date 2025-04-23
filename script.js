@@ -1,24 +1,27 @@
 function getDate () {
     const now = new Date();
-    const date = document.querySelector("#date");
 
     const options = { weekday: 'short', day: 'numeric' , month: 'long'};
     const dateFormat = new Intl.DateTimeFormat('fr-FR', options).format(now);
 
-    date.innerHTML = `${dateFormat}`;
-
+    return dateFormat
 }
 
 function getTime() {
     const now = new Date();
-    const time = document.querySelector("#time");
+    const options = { hour: '2-digit', minute: '2-digit', second: '2-digit'};
+    const timeFormat = new Intl.DateTimeFormat('fr-FR', options).format(now);
 
-    const timeFormat = new Intl.DateTimeFormat('fr-FR', { hour: '2-digit', minute: '2-digit' }).format(now);
-
-    time.innerHTML = `${timeFormat}`;
-
+    return timeFormat
 }
 
+function updateDateTime() {
+    const dateDisplay = document.querySelector("#date");
+    const timeDisplay = document.querySelector("#time");
 
-getDate();
-getTime();
+    dateDisplay.innerHTML = getDate()
+    timeDisplay.innerHTML = getTime()
+}
+
+updateDateTime();
+const dateTimeInterval = setInterval(updateDateTime, 1000);
