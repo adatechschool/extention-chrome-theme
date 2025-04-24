@@ -13,6 +13,13 @@ header {
     margin: 5em;
 }
 
+    input::placeholder {
+        border : none;
+        border-bottom: 2px solid red;
+        /* background-color: blueviolet; */
+        color: red; 
+    }
+
 main {
     flex: 1;
     display: flex;
@@ -20,17 +27,17 @@ main {
     justify-content: center;
 }
 
-h1 {
-    color: white;
-    text-align: center;
-}
+    h1 {
+        color: white;
+        text-align: center;
+    }
 
-h2 {
-    color: white;
-    text-align: center;
-}  
+    h2 {
+        color: white;
+        text-align: center;
+    }  
 
-h3 {
-    color: white;
-    text-align: center;
-}
+    h3 {
+        color: white;
+        text-align: center;
+    }
