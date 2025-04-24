@@ -28,10 +28,17 @@ const getUserName = () => {
 getUserName();
 
 const removeSpecificKey = () => {
+  const now = new Date();
+  const tomorrow = new Date(now);
+  tomorrow.setDate(now.getDate() + 1);
+  tomorrow.setHours(0, 0, 0, 0);
+
+  const timeToMidnight = tomorrow - now;
+
   setTimeout(() => {
     localStorage.removeItem("goal-name");
-    location.reload();
-  }, 24 * 60 * 60 * 1000);
+    addedGoal();
+  }, timeToMidnight);
 };
 
 const addedGoal = () => {
