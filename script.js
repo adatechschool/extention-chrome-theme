@@ -72,6 +72,7 @@ resetBtn.addEventListener("click", () => {
 });
 
 
+
 let calculator = document.querySelector('.calculator')
 
 document.getElementById('calculator').addEventListener("click", () => {
@@ -157,3 +158,19 @@ function updateDateTime() {
 updateDateTime();
 const dateTimeInterval = setInterval(updateDateTime, 1000);
 
+/*Affichage du fond*/
+const fondEcran = document.getElementById('fondEcran')
+console.log(fondEcran)
+
+
+async function getNewImage() {
+    const response = await fetch('https://api.unsplash.com/search/photos/?query=landscape&client_id=0M7ImkuqWArg3q_NCzt1N1N5SJMi6rTi6bzd982Jx1Y'
+)
+    let randomNumber = Math.floor(Math.random()*10)
+    const data = await response.json()
+    let url = data.results[randomNumber].urls.regular
+    console.log(url)
+    fondEcran.src = url
+}
+
+getNewImage()
