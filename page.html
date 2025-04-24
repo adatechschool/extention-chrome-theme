@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bienvenue !</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js" defer></script>
@@ -49,10 +49,20 @@
         </div>
     </header>
     <main>
+        <form id="form-name">
+          <input type="text" id="name" placeholder="Enter a name" />
+          <button id="add-name" type="submit">Envoyer</button>
+        </form>
+
+        <form id="form-goal">
+          <input type="text" id="goal-name" placeholder="Enter a goal" />
+          <button id="add-goal" type="submit">Envoyer</button>
+        </form>
+      
         <h3 id="date">date</h3>
         <h1 id="time">heure</h1>
-        <h3>message du jour</h3>
-        <h2>objectif</h2>
+        <h3>Bonjour, <span id="username"></span></h3>
+        <h2 id="goal"></h2>
     </main>
-</body>
+  </body>
 </html>
