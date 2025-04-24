@@ -4,7 +4,6 @@
     "version": "1.0",
     "manifest_version": 3,
 
-     // Cette clé permet d'indiquer à Chrome que vous souhaitez remplacer une de ses pages par défaut.
     "chrome_url_overrides": {
         "newtab": "page.html"
     },

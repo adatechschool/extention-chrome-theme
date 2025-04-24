@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bienvenue !</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js" defer></script>
@@ -10,7 +10,17 @@
 <body>
     
     <header>
-        <span id="search-bar">Barre de recherche</span>
+        
+        <div class="search-container">
+            <!-- method GET = données ajoutées à l'URL sous forme de paramètres de requête. 
+             VS method POST = données dans le corps de la requête HTTP (non visible dans l'URL) -->
+            <form id="searchForm" action="https://www.google.com/search" method="get"> 
+                <img id='icon-search' src='images/search.svg' alt='Icone loupe' />
+                <!-- autocomplete = définit si le navigateur propose les valeurs précédentes (autocomplétion) -->
+              <input type="text" id="searchInput" name="q" placeholder="Rechercher sur Google..." autocomplete="off">
+              <button type="submit">Rechercher</button>
+            </form>
+          </div>      
 
         <button id="timer">timer</button>
         <div class="timer">
@@ -51,10 +61,21 @@
     </header>
     <img id = 'fondEcran' src=""/>
     <main>
-        <h3 id="date">date</h3>
-        <h1 id="time">heure</h1>
-        <h3>message du jour</h3>
-        <h2>objectif</h2>
+        <form id="form-name">
+          <input type="text" id="name" placeholder="Enter a name" />
+          <button id="add-name" type="submit">Envoyer</button>
+        </form>
+
+        <form id="form-goal">
+          <input type="text" id="goal-name" placeholder="Enter a goal" />
+          <button id="add-goal" type="submit">Envoyer</button>
+        </form>
+      
+        <h3 id="dateDisplay">date</h3>
+        <h1 id="timeDisplay">heure</h1>
+        <h3>Bonjour, <span id="username"></span></h3>
+        <h2 id="goal"></h2>
+      
     </main>
-</body>
+  </body>
 </html>
