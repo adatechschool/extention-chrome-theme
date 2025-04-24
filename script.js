@@ -189,7 +189,6 @@ function clearDisplay() {
   document.getElementById('display').value = ''; // Clear the display
 }
 
-
 function getDate () {
     const now = new Date();
 

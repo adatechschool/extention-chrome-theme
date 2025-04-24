@@ -13,6 +13,13 @@ header {
   margin: 5em;
 }
 
+    input::placeholder {
+        border : none;
+        border-bottom: 2px solid red;
+        /* background-color: blueviolet; */
+        color: red; 
+    }
+
 main {
   flex: 1;
   display: flex;
