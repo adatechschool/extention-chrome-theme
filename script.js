@@ -1,5 +1,3 @@
-<<<<<<< main
-=======
 function getDate () {
     const now = new Date();
 
@@ -27,4 +25,3 @@ function updateDateTime() {
 
 updateDateTime();
 const dateTimeInterval = setInterval(updateDateTime, 1000);
->>>>>>> local

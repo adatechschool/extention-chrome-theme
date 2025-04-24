@@ -9,15 +9,24 @@
 </head>
 <body>
     <header>
-        <span id="search-bar">Barre de recherche</span>
+        
+        <div class="search-container">
+            <form id="searchForm" action="https://www.google.com/search" method="get">
+              <input type="text" id="searchInput" name="q" placeholder="Rechercher sur Google..." autocomplete="off">
+              <button type="submit">Rechercher</button>
+            </form>
+          </div>
         <span id="timer">timer</span>
         <span id="calculator">calculatrice</span>
+
     </header>
     <main>
+
         <h3 id="date">date</h3>
         <h1 id="time">heure</h1>
         <h3>message du jour</h3>
         <h2>objectif</h2>
+        
     </main>
 </body>
 </html>
