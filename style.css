@@ -58,41 +58,35 @@ h3 {
   visibility: hidden;
 }
 /*style calculette*/
-/*body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-  }*/
-
+.calculator{
+  visibility: hidden;
+}
   /* Style for the calculator container */
   .calculator {
-    visibility: hidden;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 190px; /* Ajuste la largeur pour être sûr que la grille tient dedans */
   }
-
+  
   /* Style for the display area */
-  .display {
-    width: 160px;
+  .afficher {
+    width: 175px;
     height: 40px;
     text-align: right;
     margin-bottom: 10px;
     font-size: 1.5em;
     padding: 5px;
   }
-
+  
   /* Grid layout for the calculator buttons */
   .buttons {
     display: grid;
     grid-template-columns: repeat(4, 40px);
     gap: 10px;
   }
-
+  
   /* Style for the buttons */
   .buttons button {
     width: 40px;
@@ -103,19 +97,20 @@ h3 {
     color: white;
     border-radius: 5px;
     cursor: pointer;
+    box-sizing: border-box; /* Important to prevent overflow */
   }
-
+  
   /* Hover effect for the buttons */
   .buttons button:hover {
     background-color: #45a049;
   }
-
+  
   /* Special style for the equals button */
   .buttons .equals {
-    grid-column: span 2; /* Spans over 2 columns */
+    /*grid-column: span 2; /* Spans over 2 columns */
     background-color: #2196F3;
   }
-
+  
   /* Hover effect for the equals button */
   .buttons .equals:hover {
     background-color: #0b7dda;
