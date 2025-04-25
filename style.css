@@ -1,4 +1,7 @@
 body {
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
   background-color: blueviolet;
   display: flex;
   flex-direction: column;
@@ -13,11 +16,19 @@ header {
   margin: 5em;
 }
 
-    input::placeholder {
-        border : none;
-        border-bottom: 2px solid red;
-        /* background-color: blueviolet; */
-        color: red; 
+    #searchInput {
+        background: transparent; 
+        border: none; 
+        border-bottom: 1px solid #fff; 
+        color: #fff; 
+        padding: 8px 0; 
+        outline: none;  
+    }
+  
+    #searchInput::placeholder {
+        color: white;
+        font-style: italic;
+        opacity: 0.7;
     }
 
 main {
