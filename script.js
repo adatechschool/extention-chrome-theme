@@ -146,49 +146,75 @@ document.getElementById('calculator').addEventListener("click", () => {
 
 
 /*calculette*/
-/* Variables to store current input, previous input, and operator */
+const afficher = document.getElementById('afficher'); // => on récupère l'écran de la calculette
 let currentInput = '';
 let operator = '';
-let previousInput = '';
+let firstOperand = null;
 
-/* Function to append numbers to the current input */
-function appendNumber(number) {
-  currentInput += number; // Append the clicked number to current input
-  document.getElementById('display').value = currentInput; // Update the display
-}
+// Ajouter les chiffres
+document.querySelectorAll('[data-number]').forEach(button => { //Les attributs data- sont faits spécialement pour stocker des infos personnalisées dans un élément HTML.
+  button.addEventListener('click', () => {
+    currentInput += button.dataset.number; // pour récuperer la valeur du bouton
+    updateAfficher();
+  });
+});
 
-/* Function to set the operator and prepare for the next input */
-function setOperator(op) {
-  operator = op; // Store the chosen operator
-  previousInput = currentInput; // Store the current input as previous
-  currentInput = ''; // Clear the current input for the next number
-}
+// Ajouter les opérateurs
+document.querySelectorAll('[data-operator]').forEach(button => {
+  button.addEventListener('click', () => {
+    if (currentInput === '') return; // qd aucun chiffre n'a été sélectionné = pas d'opération
 
-/* Function to perform the calculation based on the operator */
-function calculate() {
-  let result;
-  // Perform the appropriate operation based on the operator
-  if (operator === '+') {
-    result = parseFloat(previousInput) + parseFloat(currentInput);
-  } else if (operator === '-') {
-    result = parseFloat(previousInput) - parseFloat(currentInput);
-  } else if (operator === '*') {
-    result = parseFloat(previousInput) * parseFloat(currentInput);
-  } else if (operator === '/') {
-    result = parseFloat(previousInput) / parseFloat(currentInput);
+    if (firstOperand === null) {
+      firstOperand = parseFloat(currentInput); // début de l'opération on entre un chiffre qui devient "firstOperand" au moment où on tape sur un opérateur
+    } else {
+      firstOperand = operate(firstOperand, parseFloat(currentInput), operator); //on poursuit une opération avec plusieurs nb
+    }
+
+    operator = button.dataset.operator;
+    currentInput = ''; //on vide l'ecran
+    updateAfficher(); //maj de l'affichage 
+  });
+});
+
+// Bouton =
+document.getElementById('equals').addEventListener('click', () => {
+  if (operator && currentInput !== '') {
+    const result = operate(firstOperand, parseFloat(currentInput), operator);
+    currentInput = result.toString();
+    operator = '';
+    firstOperand = null;
+    updateAfficher();
   }
-  document.getElementById('display').value = result; // Display the result
-  currentInput = result.toString(); // Store the result as the new current input
-  operator = ''; // Reset the operator
+});
+
+// Bouton Clear
+document.getElementById('clear').addEventListener('click', () => {
+  currentInput = '';
+  operator = '';
+  firstOperand = null;
+  updateAfficher();
+});
+
+// Fonctions utilitaires
+function updateAfficher() {
+  afficher.value = currentInput || '0';
 }
 
-/* Function to clear the display and reset the calculator */
-function clearDisplay() {
-  currentInput = '';
-  previousInput = '';
-  operator = '';
-  document.getElementById('display').value = ''; // Clear the display
-}
+function operate(a, b, op) { //permet de faire fonctionner la calculette
+    switch (op) {
+      case '+':
+        return a + b;
+      case '-':
+        return a - b;
+      case '*':
+        return a * b;
+      case '/':
+        return b !== 0 ? a / b : 'Erreur'; // évite la division par zéro
+      default:
+        return b;
+    }
+  }
+
 
 function getDate () {
     const now = new Date();
