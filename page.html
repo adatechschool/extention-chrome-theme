@@ -10,17 +10,17 @@
 <body>
     
     <header>
-        
+
         <div class="search-container">
-            <!-- method GET = données ajoutées à l'URL sous forme de paramètres de requête. 
+            <!-- method GET = données ajoutées à l'URL sous forme de paramètres de requête.
              VS method POST = données dans le corps de la requête HTTP (non visible dans l'URL) -->
-            <form id="searchForm" action="https://www.google.com/search" method="get"> 
+            <form id="searchForm" action="https://www.google.com/search" method="get">
                 <img id='icon-search' src='images/search.svg' alt='Icone loupe' />
                 <!-- autocomplete = définit si le navigateur propose les valeurs précédentes (autocomplétion) -->
               <input type="text" id="searchInput" name="q" placeholder="Rechercher sur Google..." autocomplete="off">
               <button type="submit">Rechercher</button>
             </form>
-          </div>      
+          </div>
 
         <button id="timer">timer</button>
         <div class="timer" style="display: none;">
@@ -72,12 +72,26 @@
           <input type="text" id="goal-name" placeholder="Enter a goal" />
           <button id="add-goal" type="submit">Envoyer</button>
         </form>
-      
+
         <h3 id="dateDisplay">date</h3>
         <h1 id="timeDisplay">heure</h1>
         <h3>Bonjour, <span id="username"></span></h3>
         <h2 id="goal"></h2>
-      
+
+        <div class="favoris">
+          <a href="https://www.youtube.com/" target="_blank">
+            <img src="/images/favoris/logo-youtube.png" alt="youtube logo">
+          </a>
+          <a href="https://moodle.adatechschool.fr/" target="_blank">
+            <img src="/images/favoris/logo-moodle.png" alt="moodle logo">
+          </a>
+          <a href="https://mail.google.com/" target="_blank">
+            <img src="/images/favoris/logo-gmail.png" alt="gmail logo">
+          </a>
+          <a href="https://www.facebook.com/" target="_blank">
+            <img src="/images/favoris/logo-facebook.png" alt="facebook logo">
+          </a>
+        </div>
     </main>
   </body>
 </html>

@@ -63,7 +63,7 @@ h3 {
 }
 
 /*style timer*/
-.timer{
+.timer {
   visibility: hidden;
 }
 /*style calculette*/
@@ -124,3 +124,29 @@ h3 {
   .buttons .equals:hover {
     background-color: #0b7dda;
   }
+
+/* Favoris Link */
+
+.favoris {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.favoris a {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 8px;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.favoris a:hover {
+  transform: translateY(-5px);
+  transition: 0.4s ease;
+}
+
+.favoris a img {
+  width: 30px;
+}
