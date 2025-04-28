@@ -47,7 +47,13 @@ header {
       position: absolute;
         z-index: 2;
     }
+.bouton{
+  border-radius: 5px;
+}
 
+.bouton button:hover {
+  background-color: #858785;
+}
 main {
   grid-column: 2;
   grid-row: 2;
