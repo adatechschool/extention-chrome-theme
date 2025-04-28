@@ -36,17 +36,17 @@
         </form>
       </div>
       <section class="tools">
-        <button id="timer">timer</button>
+        <button class="bouton" id="timer">timer</button>
         <div class="timer" style="display: none">
           <input id="time" type="number" placeholder="Minutes" />
-          <button id="start">Démarrer</button>
-          <button id="pause">Pause</button>
-          <button id="reset">Réinitialiser</button>
-          <div id="display">00:00</div>
+          <button class="bouton" id="start">Démarrer</button>
+          <button class="bouton" id="pause">Pause</button>
+          <button class="bouton" id="reset">Réinitialiser</button>
+          <div class="bouton" id="display">00:00</div>
+
         </div>
 
-        <button id="calculator">calculatrice</button>
-
+        <button class="bouton" id="calculator">Calculatrice</button>
         <div class="calculator" style="display: none">
           <!-- Input field to display the calculator results -->
           <input type="text" class="afficher" id="afficher" disabled />
@@ -70,8 +70,8 @@
 
             <button id="clear">C</button>
             <button data-number="0">0</button>
-            <button data-operator="/">/</button>
             <button id="equals" class="equals">=</button>
+            <button data-operator="/">/</button>
           </div>
         </div>
       </section>

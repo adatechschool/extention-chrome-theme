@@ -39,6 +39,7 @@ const pauseBtn = document.getElementById("pause");
 const resetBtn = document.getElementById("reset");
 const display = document.getElementById("display");
 
+
 let timerValue = 0;
 let initialValue = 0;
 let intervalId = null;
@@ -63,7 +64,7 @@ startBtn.addEventListener("click", () => {
 
   timerValue = initialValue;
   updateDisplay();
-
+  
   if (intervalId !== null) return;
 
   intervalId = setInterval(() => {
