@@ -256,7 +256,7 @@ async function getNewImage() {
     let randomNumber = Math.floor(Math.random()*10)
     const data = await response.json()
     
-    const imageUrl = data.results[randomNumber].urls.regular;
+    const imageUrl = data.results[randomNumber].urls.full;
     document.body.style.backgroundImage = `url(${imageUrl})`;
 }
 
