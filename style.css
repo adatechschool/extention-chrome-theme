@@ -84,38 +84,45 @@ h3 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 190px; /* Ajuste la largeur pour être sûr que la grille tient dedans */
 }
+.timer .boutton {
+
+}
+#display {
+  color: black;
+}
+
 /*style calculette*/
 .calculator{
   display: none;
 }
   /* Style for the calculator container */
-  .calculator {
+.calculator {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 190px; /* Ajuste la largeur pour être sûr que la grille tient dedans */
-  }
+}
   
   /* Style for the display area */
-  .afficher {
+.afficher {
     width: 175px;
     height: 40px;
     text-align: right;
     margin-bottom: 10px;
     font-size: 1.5em;
     padding: 5px;
-  }
+}
   
   /* Grid layout for the calculator buttons */
-  .buttons {
+.buttons {
     display: grid;
     grid-template-columns: repeat(4, 40px);
     gap: 10px;
-  }
+}
   
   /* Style for the buttons */
-  .buttons button {
+.buttons button {
     width: 40px;
     height: 40px;
     font-size: 1.2em;
@@ -125,12 +132,12 @@ h3 {
     border-radius: 5px;
     cursor: pointer;
     box-sizing: border-box; /* Important to prevent overflow */
-  }
+}
   
   /* Hover effect for the buttons */
-  .buttons button:hover {
+.buttons button:hover {
     background-color: #45a049;
-  }
+}
   
   /* Special style for the equals button */
   .buttons .equals {
