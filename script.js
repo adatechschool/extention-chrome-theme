@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const updateDisplay = (data) => {
     USER_NAME.textContent = data.name || "Visiteur";
-    GOAL.textContent = data["goal-name"] || "Aucun objectif aujourd'hui :'(";
+    GOAL.innerHTML = `    <svg xmlns="http://www.w3.org/2000/svg" width="3vw" height="3vw" id="icone-check" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-icon lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+     ${data["goal-name"]}` || "Aucun objectif aujourd'hui :'(";
   };
 
   chrome.storage.local.get(["name", "goal-name"], (result) => {
