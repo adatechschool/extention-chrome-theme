@@ -4,101 +4,100 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bienvenue !</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <script defer src="script.js"></script>
-</head>
-<body>
-    
+  </head>
+  <body>
     <header>
-
-        <div class="search-container">
-            <!-- method GET = données ajoutées à l'URL sous forme de paramètres de requête.
-             VS method POST = données dans le corps de la requête HTTP (non visible dans l'URL) -->
-            <form id="searchForm" action="https://www.google.com/search" method="get">
-                <img id='icon-search' src='images/search.svg' alt='Icone loupe' />
-                <!-- autocomplete = définit si le navigateur propose les valeurs précédentes (autocomplétion) -->
-              <input type="text" id="searchInput" name="q" placeholder="Rechercher sur Google..." autocomplete="off">
-              <button type="submit">Rechercher</button>
-            </form>
-          </div>
-        <section class="tools">
-           
+      <div class="search-container">
+        <!-- method GET = données ajoutées à l'URL sous forme de paramètres de requête.
+        VS method POST = données dans le corps de la requête HTTP (non visible dans l'URL) -->
+        <form
+          id="searchForm"
+          action="https://www.google.com/search"
+          method="get"
+        >
+          <img id="icon-search" src="images/search.svg" alt="Icone loupe" />
+          <!-- autocomplete = définit si le navigateur propose les valeurs précédentes (autocomplétion) -->
+          <input
+            type="text"
+            id="searchInput"
+            name="q"
+            placeholder="Rechercher sur Google..."
+            autocomplete="off"
+          />
+          <button type="submit">Rechercher</button>
+        </form>
+      </div>
+      <section class="tools">
         <button id="timer">timer</button>
-        <div class="timer" style="display: none;">
-            <input id="time" type="number" placeholder="Minutes">
-            <button id="start">Démarrer</button>
-            <button id="pause">Pause</button>
-            <button id="reset">Réinitialiser</button>
-            <div id="display">00:00</div>
+        <div class="timer" style="display: none">
+          <input id="time" type="number" placeholder="Minutes" />
+          <button id="start">Démarrer</button>
+          <button id="pause">Pause</button>
+          <button id="reset">Réinitialiser</button>
+          <div id="display">00:00</div>
         </div>
 
         <button id="calculator">calculatrice</button>
 
         <div class="calculator" style="display: none">
-            <!-- Input field to display the calculator results -->
-            <input type="text" class="afficher" id="afficher" disabled>
-            <!--text : pour afficher du texte mais avec "disabled" on rend le champ non modifiable par l'utilisateur-->
-           
-            <div class="buttons">
-              <button data-number="1">1</button>
-              <button data-number="2">2</button>
-              <button data-number="3">3</button>
-              <button data-operator="+">+</button>
-        
-              <button data-number="4">4</button>
-              <button data-number="5">5</button>
-              <button data-number="6">6</button>
-              <button data-operator="-">-</button>
-      
-              <button data-number="7">7</button>
-              <button data-number="8">8</button>
-              <button data-number="9">9</button>
-              <button data-operator="*">*</button>
-              
-              <button id="clear">C</button>
-              <button data-number="0">0</button>
-              <button data-operator="/">/</button>
-              <button id="equals" class="equals">=</button>
-            </div>
+          <!-- Input field to display the calculator results -->
+          <input type="text" class="afficher" id="afficher" disabled />
+          <!--text : pour afficher du texte mais avec "disabled" on rend le champ non modifiable par l'utilisateur-->
+
+          <div class="buttons">
+            <button data-number="1">1</button>
+            <button data-number="2">2</button>
+            <button data-number="3">3</button>
+            <button data-operator="+">+</button>
+
+            <button data-number="4">4</button>
+            <button data-number="5">5</button>
+            <button data-number="6">6</button>
+            <button data-operator="-">-</button>
+
+            <button data-number="7">7</button>
+            <button data-number="8">8</button>
+            <button data-number="9">9</button>
+            <button data-operator="*">*</button>
+
+            <button id="clear">C</button>
+            <button data-number="0">0</button>
+            <button data-operator="/">/</button>
+            <button id="equals" class="equals">=</button>
           </div>
-        </section>
-    </header>
-    
-    <main>
-        <form id="form-name">
-          <input type="text" id="name" placeholder="Enter a name" />
-          <button id="add-name" type="submit">Envoyer</button>
-        </form>
-
-        <form id="form-goal">
-          <input type="text" id="goal-name" placeholder="Enter a goal" />
-          <button id="add-goal" type="submit">Envoyer</button>
-        </form>
-
-        <h3 id="dateDisplay">date</h3>
-        <h1 id="timeDisplay">heure</h1>
-        <h3>Bonjour, <span id="username"></span></h3>
-        <h2 id="goal"></h2>
-        
-      </main>
-      <div class="container-favoris">
-        <div class="favoris">
-          <a href="https://www.youtube.com/" target="_blank">
-            <img src="/images/favoris/logo-youtube.png" alt="youtube logo">
-          </a>
-          <a href="https://moodle.adatechschool.fr/" target="_blank">
-            <img src="/images/favoris/logo-moodle.png" alt="moodle logo">
-          </a>
-          <a href="https://mail.google.com/" target="_blank">
-            <img src="/images/favoris/logo-gmail.png" alt="gmail logo">
-          </a>
-          <a href="https://www.facebook.com/" target="_blank">
-            <img src="/images/favoris/logo-facebook.png" alt="facebook logo">
-          </a>
         </div>
+      </section>
+    </header>
+
+    <main>
+      <h3 id="dateDisplay">date</h3>
+      <h1 id="timeDisplay">heure</h1>
+      <h3>Bonjour, <span id="username"></span></h3>
+      <h2 id="goal"></h2>
+    </main>
+    <div class="container-favoris">
+      <div class="favoris">
+        <a href="https://www.youtube.com/" target="_blank">
+          <img src="/images/favoris/logo-youtube.png" alt="youtube logo" />
+        </a>
+        <a href="https://moodle.adatechschool.fr/" target="_blank">
+          <img src="/images/favoris/logo-moodle.png" alt="moodle logo" />
+        </a>
+        <a href="https://mail.google.com/" target="_blank">
+          <img src="/images/favoris/logo-gmail.png" alt="gmail logo" />
+        </a>
+        <a href="https://www.facebook.com/" target="_blank">
+          <img src="/images/favoris/logo-facebook.png" alt="facebook logo" />
+        </a>
       </div>
+    </div>
   </body>
 </html>
