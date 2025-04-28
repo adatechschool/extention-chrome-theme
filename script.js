@@ -44,6 +44,7 @@ let timerValue = 0;
 let initialValue = 0;
 let intervalId = null;
 let isPaused = false;
+let audio = new Audio ('funny-alarm.mp3')
 
 function updateDisplay() {
   const minutes = Math.floor(timerValue / 60);
@@ -76,6 +77,9 @@ startBtn.addEventListener("click", () => {
     if (timerValue <= 0) {
       clearInterval(intervalId);
       intervalId = null;
+      audio.play()
+      // Affiche l'alerte visuelle
+      document.getElementById("alertBox").style.display = "block";
     }
   }, 1000);
 });
@@ -93,6 +97,7 @@ resetBtn.addEventListener("click", () => {
   updateDisplay();
   isPaused = false;
   pauseBtn.innerText = "Pause";
+  document.getElementById("alertBox").style.display = "none";
 });
 
 let calculator = document.querySelector(".calculator");
