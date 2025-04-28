@@ -65,10 +65,10 @@ addedGoal();
 let timer = document.querySelector('.timer')
 
 document.getElementById('timer').addEventListener("click", () => {
-    if(getComputedStyle(timer).visibility != "hidden"){
-        timer.style.visibility = "hidden";
+    if(getComputedStyle(timer).display != "none"){
+        timer.style.display = "none";
       } else {
-        timer.style.visibility = "visible";
+        timer.style.display = "block";
       }
 })
 
@@ -137,10 +137,10 @@ resetBtn.addEventListener("click", () => {
 let calculator = document.querySelector('.calculator')
 
 document.getElementById('calculator').addEventListener("click", () => {
-    if(getComputedStyle(calculator).visibility != "hidden"){
-        calculator.style.visibility = "hidden";
+    if(getComputedStyle(calculator).display != "none"){
+        calculator.style.display = "none";
       } else {
-        calculator.style.visibility = "visible";
+        calculator.style.display = "block";
       }
 })
 

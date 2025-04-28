@@ -1,26 +1,29 @@
+* {
+  font-family: "Manrope", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
 body {
   background-size: cover; 
   background-repeat: no-repeat; 
   background-position: center; 
   background-color: blueviolet;
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: auto 1fr auto;
+  
   min-height: 100vh;
   margin: 0;
+  padding: 5% 10%; 
 }
 
 header {
   color: white;
-  grid-column: 1 / 3;
-  grid-row: 1;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
   text-align: center;
   padding: 10px;
-  margin: 5em;
 }
-    .search-container {
-        grid-column: 1;
-    }
 
     #searchInput {
         background: transparent; 
@@ -37,11 +40,11 @@ header {
         opacity: 0.7;
     }
 
-    #timer, #calculator {
-        grid-column: 3;
-    }
+   
 
     .timer, .calculator {
+      /* Détache des autres élements */
+      position: absolute;
         z-index: 2;
     }
 
@@ -68,11 +71,16 @@ h3 {
 
 /*style timer*/
 .timer {
-  visibility: hidden;
+  display: none;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 190px; /* Ajuste la largeur pour être sûr que la grille tient dedans */
 }
 /*style calculette*/
 .calculator{
-  visibility: hidden;
+  display: none;
 }
   /* Style for the calculator container */
   .calculator {
@@ -130,6 +138,11 @@ h3 {
   }
 
 /* Favoris Link */
+
+.container-favoris {
+  display: grid;
+  grid-column: 1;
+}
 
 .favoris {
   display: flex;
