@@ -9,5 +9,8 @@ Cette page d'accueil à été codé avec du HTML, du JavaScript et du CSS. Le pr
 1/ d'un manifest.json, 
 2/ de 3 fichiers dédiés à la pop-up de l'extension (index.css, index.js, index.html) qui permet à l'utilisateur de faire des choix (prénom, objectif, type de fond d'écran),
 3/ de 3 fichiers dédiés à la page d'accueil (page.html, script.js, style.css)
-4/ de fichiers images et son
+4/ de fichiers images et son.
+
+![image](https://github.com/user-attachments/assets/fbb97e89-2453-4ecb-867d-62eb2c054aa8)
+
 
