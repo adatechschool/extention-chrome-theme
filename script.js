@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const updateDisplay = (data) => {
     USER_NAME.textContent = data.name || "Visiteur";
-    GOAL.innerHTML = `    <svg xmlns="http://www.w3.org/2000/svg" width="3vw" height="3vw" id="icone-check" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-icon lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+    GOAL.innerHTML =
+      `    <svg xmlns="http://www.w3.org/2000/svg" width="3vw" height="3vw" id="icone-check" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-icon lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
      ${data["goal-name"]}` || "Aucun objectif aujourd'hui :'(";
   };
 
@@ -40,12 +41,11 @@ const pauseBtn = document.getElementById("pause");
 const resetBtn = document.getElementById("reset");
 const display = document.getElementById("display");
 
-
 let timerValue = 0;
 let initialValue = 0;
 let intervalId = null;
 let isPaused = false;
-let audio = new Audio ('funny-alarm.mp3')
+let audio = new Audio("funny-alarm.mp3");
 
 function updateDisplay() {
   const minutes = Math.floor(timerValue / 60);
@@ -66,7 +66,7 @@ startBtn.addEventListener("click", () => {
 
   timerValue = initialValue;
   updateDisplay();
-  
+
   if (intervalId !== null) return;
 
   intervalId = setInterval(() => {
@@ -78,7 +78,7 @@ startBtn.addEventListener("click", () => {
     if (timerValue <= 0) {
       clearInterval(intervalId);
       intervalId = null;
-      audio.play()
+      audio.play();
       // Affiche l'alerte visuelle
       document.getElementById("alertBox").style.display = "block";
     }
@@ -224,7 +224,7 @@ async function getNewImage() {
   const data = await response.json();
 
   const imageUrl = data.results[randomNumber].urls.full;
-  document.body.style.backgroundImage = `url(${imageUrl})`;
+  document.body.style.setProperty("--background-image", `url(${imageUrl})`);
 }
 
 getNewImage();
