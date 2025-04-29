@@ -88,11 +88,27 @@ main {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 190px; /* Ajuste la largeur pour être sûr que la grille tient dedans */
 }
-.timer .boutton {
+.timer .bouton {
 
 }
 #display {
   color: black;
+}
+
+#alertBox {
+  display: none;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  background-color: red;
+  color: white;
+  animation: flash 0.5s infinite alternate;
+}
+
+@keyframes flash {
+  from { opacity: 1; }
+  to { opacity: 0.2; }
 }
 
 /*style calculette*/
