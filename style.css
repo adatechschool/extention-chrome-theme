@@ -6,14 +6,26 @@
 }
 
 body {
-  background-size: cover; 
-  background-repeat: no-repeat; 
-  background-position: center; 
-  background-color: blueviolet;
-  
+  background-color: #2c2c2c;
   min-height: 100vh;
   margin: 0;
-  padding: 5% 10%; 
+  padding: 3% 10%;
+  position: relative;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--background-image);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  z-index: -1;
 }
 
 header {
@@ -50,7 +62,8 @@ header {
 
    
 
-    .timer, .calculator {
+    .timer, 
+    .calculator {
       /* Détache des autres élements */
       position: absolute;
         z-index: 2;
@@ -65,6 +78,7 @@ svg {
 
 .btn-tools {
   border : none;
+
   border-radius: 5px;
   border-color: white;
   background-color: transparent;
@@ -81,23 +95,23 @@ main {
   line-height: 1vw;
 }
 
-  h1 {
-    color: white;
-    font-size: 8vw;
-    text-align: center;
-  }
+h1 {
+  color: white;
+  font-size: 8vw;
+  text-align: center;
+}
 
-  h2 {
-    color: white;
-    font-size: 3vw;
-    text-align: center;
-  }
+h2 {
+  color: white;
+  font-size: 3vw;
+  text-align: center;
+}
 
-  h3 {
-    color: white;
-    font-size: 1.5vw;
-    text-align: center;
-  }
+h3 {
+  color: white;
+  font-size: 1.5vw;
+  text-align: center;
+}
 
 /*style timer*/
 .timer {
@@ -125,24 +139,28 @@ main {
 }
 
 @keyframes flash {
-  from { opacity: 1; }
-  to { opacity: 0.2; }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.2;
+  }
 }
 
 /*style calculette*/
-.calculator{
+.calculator {
   display: none;
 }
-  /* Style for the calculator container */
+/* Style for the calculator container */
 .calculator {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 190px; /* Ajuste la largeur pour être sûr que la grille tient dedans */
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 190px; /* Ajuste la largeur pour être sûr que la grille tient dedans */
 }
-  
-  /* Style for the display area */
+
+/* Style for the display area */
 .afficher {
     width: 175px;
     height: 40px;
@@ -187,6 +205,7 @@ main {
   .btn-calculator .equals:hover {
     background-color: #0b7dda;
   }
+
 
 /* Favoris Link */
 
