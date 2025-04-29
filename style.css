@@ -11,7 +11,6 @@ body {
   margin: 0;
   padding: 3% 10%;
   position: relative;
-  overflow: hidden;
 }
 
 body::before {
@@ -38,37 +37,35 @@ header {
   padding: 10px;
 }
 
-  #searchForm {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+#searchForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    #searchInput {
-        background: transparent; 
-        border: none; 
-        border-bottom: 2px solid #fff; 
-        color: white; 
-        font-size: 1.5vw;
-        font-weight: 400;
-        font-style: italic;
-        padding: 8px 0; 
-        outline: none;  
-    }
-  
-    #searchInput::placeholder {
-        color: white;     
-        opacity: 0.9;
-    }
+#searchInput {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+  color: white;
+  font-size: 1.5vw;
+  font-weight: 400;
+  font-style: italic;
+  padding: 8px 0;
+  outline: none;
+}
 
-   
+#searchInput::placeholder {
+  color: white;
+  opacity: 0.9;
+}
 
-    .timer, 
-    .calculator {
-      /* Détache des autres élements */
-      position: absolute;
-        z-index: 2;
-    }
+.timer,
+.calculator {
+  /* Détache des autres élements */
+  position: absolute;
+  z-index: 2;
+}
 
 .btn-tools svg {
   width: 40px;
@@ -78,7 +75,7 @@ header {
 }
 
 .btn-tools {
-  border : none;
+  border: none;
 
   border-radius: 5px;
   border-color: white;
@@ -86,8 +83,8 @@ header {
 }
 
 .btn-tools:hover {
-  background-color: rgba(255, 255, 255, .3) ;
-  transition: 0.4s;    
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: 0.4s;
 }
 
 main {
@@ -163,50 +160,49 @@ h3 {
 
 /* Style for the display area */
 .afficher {
-    width: 175px;
-    height: 40px;
-    text-align: right;
-    margin-bottom: 10px;
-    font-size: 1.5em;
-    padding: 5px;
+  width: 175px;
+  height: 40px;
+  text-align: right;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  padding: 5px;
 }
-  
-  /* Grid layout for the calculator buttons */
-.btn-calculator {
-    display: grid;
-    grid-template-columns: repeat(4, 40px);
-    gap: 10px;
-}
-  
-  /* Style for the buttons */
-.btn-calculator button {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2em;
-    border: none;
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    box-sizing: border-box; /* Important to prevent overflow */
-}
-  
-  /* Hover effect for the buttons */
-.btn-calculator button:hover {
-    background-color: #45a049;
-}
-  
-  /* Special style for the equals button */
-  .btn-calculator .equals {
-    /*grid-column: span 2; /* Spans over 2 columns */
-    background-color: #2196F3;
-  }
-  
-  /* Hover effect for the equals button */
-  .btn-calculator .equals:hover {
-    background-color: #0b7dda;
-  }
 
+/* Grid layout for the calculator buttons */
+.btn-calculator {
+  display: grid;
+  grid-template-columns: repeat(4, 40px);
+  gap: 10px;
+}
+
+/* Style for the buttons */
+.btn-calculator button {
+  width: 40px;
+  height: 40px;
+  font-size: 1.2em;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  box-sizing: border-box; /* Important to prevent overflow */
+}
+
+/* Hover effect for the buttons */
+.btn-calculator button:hover {
+  background-color: #45a049;
+}
+
+/* Special style for the equals button */
+.btn-calculator .equals {
+  /*grid-column: span 2; /* Spans over 2 columns */
+  background-color: #2196f3;
+}
+
+/* Hover effect for the equals button */
+.btn-calculator .equals:hover {
+  background-color: #0b7dda;
+}
 
 /* Favoris Link */
 
