@@ -23,23 +23,6 @@
           action="https://www.google.com/search"
           method="get"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1.5vw"
-            height="1.5vw"
-            id="icon-search"
-            alt="Icone loupe"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#ffffff"
-            stroke-width="2.25"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-search-icon lucide-search"
-          >
-            <circle cx="11" cy="11" r="8" />
-            <path d="m21 21-4.3-4.3" />
-          </svg>
           <!-- autocomplete = définit si le navigateur propose les valeurs précédentes (autocomplétion) -->
           <input
             type="text"
@@ -48,27 +31,52 @@
             placeholder="Rechercher sur Google..."
             autocomplete="off"
           />
-          <button type="submit">Rechercher</button>
+          <button class="btn-tools" type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.5vw" height="1.5vw" id="icon-search" alt="Icone loupe" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="m21 21-4.3-4.3"/>
+            </svg>
+           
+          </button>
         </form>
       </div>
       <section class="tools">
-        <button class="bouton" id="timer">timer</button>
+        <button class="btn-tools" id="timer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-timer-icon lucide-timer">
+            <line x1="10" x2="14" y1="2" y2="2"/>
+            <line x1="12" x2="15" y1="14" y2="11"/>
+            <circle cx="12" cy="14" r="8"/>
+          </svg>
+        </button>
         <div class="timer" style="display: none">
           <input id="time" type="number" placeholder="Minutes" />
-          <button class="bouton" id="start">Démarrer</button>
-          <button class="bouton" id="pause">Pause</button>
-          <button class="bouton" id="reset">Réinitialiser</button>
-          <div class="bouton" id="display">00:00</div>
+          <button class="btn-timer" id="start">Démarrer</button>
+          <button class="btn-timer" id="pause">Pause</button>
+          <button class="btn-timer" id="reset">Réinitialiser</button>
+          <div class="btn-timer" id="display">00:00</div>
           <div id="alertBox">⏰ Temps écoulé !</div>
         </div>
 
-        <button class="bouton" id="calculator">Calculatrice</button>
+        <button class="btn-tools" id="calculator">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calculator-icon lucide-calculator">
+            <rect width="16" height="20" x="4" y="2" rx="2"/>
+            <line x1="8" x2="16" y1="6" y2="6"/>
+            <line x1="16" x2="16" y1="14" y2="18"/>
+            <path d="M16 10h.01"/>
+            <path d="M12 10h.01"/>
+            <path d="M8 10h.01"/>
+            <path d="M12 14h.01"/>
+            <path d="M8 14h.01"/>
+            <path d="M12 18h.01"/>
+            <path d="M8 18h.01"/>
+          </svg>
+        </button>
         <div class="calculator" style="display: none">
           <!-- Input field to display the calculator results -->
           <input type="text" class="afficher" id="afficher" disabled />
           <!--text : pour afficher du texte mais avec "disabled" on rend le champ non modifiable par l'utilisateur-->
 
-          <div class="buttons">
+          <div class="btn-calculator">
             <button data-number="1">1</button>
             <button data-number="2">2</button>
             <button data-number="3">3</button>
