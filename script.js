@@ -217,7 +217,7 @@ const dateTimeInterval = setInterval(updateDateTime, 1000);
 
 async function getNewImage() {
   const response = await fetch(
-    "https://api.unsplash.com/search/photos/?query=landscape&client_id=0M7ImkuqWArg3q_NCzt1N1N5SJMi6rTi6bzd982Jx1Y"
+  "https://api.unsplash.com/search/photos/?query=landscape&client_id=0M7ImkuqWArg3q_NCzt1N1N5SJMi6rTi6bzd982Jx1Y"
   );
   let randomNumber = Math.floor(Math.random() * 10);
   const data = await response.json();
@@ -226,4 +226,19 @@ async function getNewImage() {
   document.body.style.backgroundImage = `url(${imageUrl})`;
 }
 
-getNewImage();
+function wallpaper(){
+  let tabWallpaper = ["#808080", "#000000", "#FF0000", "#800000", "#008000", "#008080", "#0000FF", "#000080", "#FF00FF", "#800080"]
+
+  let randomWallpaper = tabWallpaper[Math.floor(Math.random() * tabWallpaper.length)];
+  document.querySelector("body").style.backgroundColor = randomWallpaper ;
+
+}
+
+chrome.storage.local.get("fondType", (result) => {
+  if (result.fondType === "couleur") {
+    wallpaper()
+
+  } else if (result.fondType === "image") {
+    getNewImage()
+}
+})
