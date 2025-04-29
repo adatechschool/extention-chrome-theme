@@ -7,6 +7,9 @@
     "chrome_url_overrides": {
         "newtab": "page.html"
     },
+    "icons": {
+        "48": "images/lamp-desk.png"
+    },
     "permissions": [
         "activeTab",
         "tabs",
