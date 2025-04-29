@@ -40,3 +40,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+
+/*choix du fond d'écran*/
+
+document.getElementById("coloredWallpaper").addEventListener("click", () => {
+  chrome.storage.local.set({ fondType: "couleur" });
+});
+
+document.getElementById("landscapeWallpaper").addEventListener("click", () => {
+  chrome.storage.local.set({ fondType: "image" });
+});
