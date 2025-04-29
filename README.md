@@ -14,4 +14,7 @@ Cette page d'accueil à été codé avec du HTML, du JavaScript et du CSS. Le pr
 ![image](https://github.com/user-attachments/assets/fbb97e89-2453-4ecb-867d-62eb2c054aa8)
 
 
-Projet réalisé par https://github.com/aurianebgnl , https://github.com/ewhalgand et https://github.com/Pampamlela
+Projet réalisé par :
+[@aurianebgnl](https://github.com/aurianebgnl)
+[@ewhalgand](https://github.com/ewhalgand)
+[@Pampamlela](https://github.com/Pampamlela)
