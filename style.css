@@ -88,7 +88,7 @@ main {
   width: 190px; /* Ajuste la largeur pour être sûr que la grille tient dedans */
 }
 .timer .bouton {
-
+  margin: 10px;
 }
 #display {
   color: black;
